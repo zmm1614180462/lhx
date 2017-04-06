@@ -13,9 +13,16 @@ Including another URLconf
     1. Import the include() function: from django.conf.urls import url, include
     2. Add a URL to urlpatterns:  url(r'^blog/', include('blog.urls'))
 """
-from django.conf.urls import url
+from django.conf.urls import url,include
 from django.contrib import admin
+from student.upload import upload_image
+from django.conf import settings
+from django.conf.urls.static import static
+
 
 urlpatterns = [
     url(r'^admin/', admin.site.urls),
-]
+    url(r'^',include('student.urls')),
+    url(r'admin/upload/(?P<dir_name>[^/]+)$',upload_image,name='upload_image')
+
+] +static(settings.MEDIA_URL,document_root=settings.MEDIA_ROOT)

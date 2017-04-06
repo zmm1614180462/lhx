@@ -1,0 +1,96 @@
+{% load staticfiles %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>login</title>
+    <link rel="stylesheet" href="{% static 'css/login.css' %}">
+
+</head>
+<body>
+<div class="container">
+
+    <div class="header">
+    </div>
+
+    <div class="picture-table"><br>
+        <div class="picture-table-mid">
+            <div id="picture">
+                <div id="list" style="left: -600px;">
+{#                    <img src="images/4.jpg" alt="4">#}
+{#                    <img src="images/1.jpg" alt="1">#}
+{#                    <img src="images/2.jpg" alt="2">#}
+{#                    <img src="images/3.jpg" alt="3">#}
+{#                    <img src="images/4.jpg" alt="4">#}
+{#                    <img src="images/1.jpg" alt="1">#}
+                </div>
+                <div id="buttons">
+                    <span index="1" class="on"></span>
+                    <span index="2" class=""></span>
+                    <span index="3" class=""></span>
+                    <span index="4" class=""></span>
+                </div>
+                <a href="javascript:void(0)" id="prev" class="arrow">&lt;</a>
+                <a href="javascript:void(0)" id="next" class="arrow">&gt;</a>
+            </div>
+            <br>
+            <br>
+            <br>
+            <div class="tablex" style="text-align: center;">
+                <form action="/view" id="loginForm" method="post">
+                    {% csrf_token %}
+                    <table>
+                        <tbody>
+                        <tr>
+                            <td height="70px" class="hn">登录系统</td>
+                        </tr>
+                        <tr>
+                            <td height="20px" style="font-size:12px;color: #4e5766; text-align: center;"></td>
+                        </tr>
+                        <tr>
+                            <td height="50px">
+                                <div style="border:0px solid red;z-index: 999;position: absolute;width: 40px;height: 35px;"
+                                     class="hamburg-my-account"></div>
+                                <input type="text" name="username" id="user" class="abc" placeholder="工号/学号"
+                                       style="padding-left: 30px;">
+                            </td>
+                        </tr>
+                        <tr>
+                            <td height="50px">
+                                <div style="border:0px solid red;z-index: 999;position: absolute;width: 40px;height: 35px;"
+                                     class="hamburg-lock"></div>
+                                <input type="password" value="" name="password" id="pwd" class="abc" placeholder="密码"></td>
+                        </tr>
+                        <tr>
+                            <td>&nbsp;</td>
+                        </tr>
+                        </tbody>
+                    </table>
+                    <button class="button" type="submit" >登 &nbsp;&nbsp;录</button>
+                </form>
+{#                <button class="button" onclick="submit()">登 &nbsp;&nbsp;录</button>#}
+                <button class="button" type="submit" >登 &nbsp;&nbsp;录</button>
+
+                <div><br></div>
+                <div id="result" style="text-align: center;color: red;"></div>
+
+            </div>
+        </div>
+    </div>
+    <br>
+
+    <div class="footer">
+
+    <div class="tip" style="font-size:12px;color: #4e5766;">
+        <hr>
+        <br><br>
+        Copyright © 2016 - 2017&nbsp;
+        <a href="javascript:void(0)"> All Rights Reserved.</a>&nbsp;&nbsp;<a href="javascript:void(0)">安阳工学院</a>&nbsp;&nbsp;&nbsp;&nbsp;
+    </div>
+</div>
+
+
+</div>
+
+</body>
+</html>

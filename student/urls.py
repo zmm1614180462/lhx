@@ -1,5 +1,6 @@
 from django.conf.urls import url, include
 from student import views
+
 #通用视图
 # from .views import index
 from django.views.generic import TemplateView,RedirectView
@@ -7,6 +8,9 @@ from django.views.generic import TemplateView,RedirectView
 
 urlpatterns = [
     url(r'^$', views.index, name='index'),
+    url(r'^login',views.login, name='login'),
+    url(r'^view',views.login_view, name='view'),
+    url(r'^home',views.home, name='home'),
     # url(r'^archive/$', views.archive, name='archive'),
     # url(r'^about$',views.about, name='about'),
     # url(r'^article/$', views.article, name='article'),
